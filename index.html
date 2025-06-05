@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curso de Refrigeración</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #E0F7FA; /* Fondo azul hielo */
+      color: #0288D1; /* Texto principal azul medio */
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background: #FFFFFF; /* Fondo blanco puro */
+      box-shadow: 0 0 10px #B0BEC5; /* Sombra gris claro */
+      text-align: center;
+    }
+    h1 {
+      color: #0288D1; /* Azul medio */
+      font-size: 2em;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease forwards, impactoBounce 1s 1.5s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes impactoBounce {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      30% {
+        transform: scale(1.3);
+      }
+      50% {
+        transform: scale(0.95);
+      }
+      70% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    h2 {
+      color: #0288D1; /* Azul medio */
+      margin-top: 30px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    ul li {
+      transition: transform 0.2s cubic-bezier(.68,-0.55,.27,1.55);
+      cursor: pointer;
+    }
+    ul li:hover {
+      transform: scale(1.12);
+    }
+    ul li::before {
+      content: "✔ ";
+      color: #A5D6A7; /* Verde menta */
+    }
+    .price-text {
+      font-size: 1.5em;
+      color: #0288D1; /* Azul medio */
+      margin: 20px 0;
+      transition: transform 0.2s cubic-bezier(.68,-0.55,.27,1.55);
+      cursor: pointer;
+    }
+    .price-text:hover {
+      transform: scale(1.12);
+    }
+    .btn {
+      display: inline-block;
+      background-color: #A5D6A7; /* Verde menta */
+      color: #0288D1; /* Azul medio */
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-radius: 5px;
+      margin-top: 10px;
+      border: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn:hover {
+      background-color: #0288D1; /* Azul medio */
+      color: #FFFFFF; /* Blanco puro */
+    }
+    .video-container {
+  position: relative;
+  padding-bottom: 177.78%; /* Relación de aspecto 9:16 para dispositivos móviles */
+  height: 0;
+  overflow: hidden;
+  margin: 20px 0;
+  max-width: 100%;
+}
+
+.video-container video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #000;
+}
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 200px;
+      margin: 20px 0;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 8px #B0BEC5; /* Sombra gris claro */
+    }
+    .carousel img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .carousel img.active {
+      opacity: 1;
+      position: relative;
+    }
+  </style>
+  <script>
+    let currentIndex = 0;
+    function startCarousel() {
+      const images = document.querySelectorAll(".carousel img");
+      setInterval(() => {
+        images[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add("active");
+      }, 3000);
+    }
+    window.onload = startCarousel;
+    function redirigirAlPago() {
+      alert("Redirigiendo al pago...");
+      window.location.href = "https://wa.me/5491164354069";
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Curso Online de Refrigeración</h1>
+    <p>Aprendé a reparar heladeras, aires y mucho más desde cero</p>
+    <h2>¿Qué incluye el curso?</h2>
+    <ul>
+      <li>Acceso inmediato y de por vida</li>
+      <li>Clases grabadas paso a paso</li>
+      <li>Grupo de apoyo en Facebook</li>
+    </ul>
+    <h2>Testimonios</h2>
+    <div class="carousel">
+      <img src="img/testimonio1.jpg" class="active" />
+      <img src="img/testimonio2.jpg" />
+      <img src="img/testimonio3.jpg" />
+      <img src="img/testimonio4.jpg" />
+      <img src="img/testimonio5.jpg" />
+    </div>
+    <h2>¿Cómo lo recibís?</h2>
+    <p>Pagás con PayPal y automáticamente te redirigimos a WhatsApp para entregártelo.</p>
+    <div class="video-container">
+  <video src="media/refri.mp4" autoplay muted loop playsinline controls></video>
+</div>
+    <p class="price-text">A tan solo 14,99 USD</p>
+    <a class="btn" href="#" onclick="redirigirAlPago()">Comprar</a>
+  </div>
+</body>
+</html>
