@@ -99,6 +99,16 @@
       background-color: #0288D1; /* Azul medio */
       color: #FFFFFF; /* Blanco puro */
     }
+    /* Estilo especial para el botón de MercadoPago */
+    .btn.mercadopago {
+      background-color: #0288D1;
+      color: #fff;
+    }
+    .btn.mercadopago:hover,
+    .btn.mercadopago:active {
+      background-color: #015a8c;
+      color: #fff;
+    }
     .video-container {
   position: relative;
   padding-bottom: 177.78%; /* Relación de aspecto 9:16 para dispositivos móviles */
@@ -176,7 +186,7 @@
       <img src="img/testimonio5.jpg" />
     </div>
     <h2>¿Cómo lo recibís?</h2>
-    <p>Pagás con PayPal y automáticamente te redirigimos a WhatsApp para entregártelo.</p>
+    <p>Pagás con PayPal o mercadopago y automáticamente te redirigimos a WhatsApp para entregártelo.</p>
     <div class="video-container">
   <video src="media/refri.mp4" autoplay muted loop playsinline controls></video>
 </div>
@@ -211,6 +221,14 @@
         }
       }).render('#paypal-button-container');
     </script>
+    <!-- Botón de MercadoPago -->
+    <button 
+      class="btn mercadopago" 
+      style="margin-top:20px;"
+      onclick="window.location.href='https://mpago.la/2pG9NX5'">
+      Pagar con MercadoPago
+    </button>
+    <h2 style="margin-top:10px;">MercadoPago para Argentina</h2>
   </div>
 </body>
 </html>
