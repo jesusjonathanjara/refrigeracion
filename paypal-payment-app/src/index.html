@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curso de Refrigeración</title>
+</head>
+<body>
+  <h1>Curso Online de Refrigeración</h1>
+  <p class="price-text">A tan solo 14,99 USD</p>
+  <div id="paypal-button-container"></div>
+  <!-- SDK de PayPal: reemplaza TU_CLIENT_ID_AQUI por tu Client ID real -->
+  <script src="https://www.paypal.com/sdk/js?client-id=ARt6ygHBq9fyNB9oHqk_dOXXOUy24f7ARSB2cKEsPQ6WI-GATUjwZb1cIg_7pUkxlfDDQcQfvyuQi7NW&currency=USD"></script>
+  <script type="module">
+    import { setupPayPalButton } from './scripts/paypal.js';
+    setupPayPalButton();
+  </script>
+</body>
+</html>

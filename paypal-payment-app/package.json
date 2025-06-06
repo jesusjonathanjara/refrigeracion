@@ -1,0 +1,19 @@
+{
+  "name": "paypal-payment-app",
+  "version": "1.0.0",
+  "description": "A simple application to integrate PayPal payment button.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "paypal-sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "live-server": "^1.2.1"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
